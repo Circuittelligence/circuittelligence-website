@@ -1,1 +1,31 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inter', sans-serif; /* Using the Inter font from your plan */
+}
 
+body {
+    /* 1. Set the background image */
+    background-image: url('path/to/your/lone_figure_field.png');
+
+    /* 2. Make the background fixed in place */
+    background-attachment: fixed;
+
+    /* 3. Position the image in the center */
+    background-position: center;
+
+    /* 4. Make the image cover the entire screen without distortion */
+    background-size: cover;
+
+    /* 5. Prevent the image from repeating */
+    background-repeat: no-repeat;
+}
+
+/* This is just for styling the example content */
+.content {
+    color: white;
+    text-align: center;
+    padding-top: 80vh; /* Pushes content down so you can see the scroll effect */
+    padding-bottom: 200vh; /* Makes the page long so you can scroll */
+}
