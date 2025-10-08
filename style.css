@@ -1,31 +1,512 @@
-body, html {
+/* Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
     height: 100%;
-    font-family: 'Inter', sans-serif; /* Using the Inter font from your plan */
-}
-
-body {
-    /* 1. Set the background image */
-    background-image: url('path/to/your/lone_figure_field.png');
-
-    /* 2. Make the background fixed in place */
-    background-attachment: fixed;
-
-    /* 3. Position the image in the center */
-    background-position: center;
-
-    /* 4. Make the image cover the entire screen without distortion */
-    background-size: cover;
-
-    /* 5. Prevent the image from repeating */
-    background-repeat: no-repeat;
-}
-
-/* This is just for styling the example content */
-.content {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
     color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Color Variables */
+:root {
+    --deep-navy: #0B132B;
+    --sky-blue: #4DA3FF;
+    --violet: #6C63FF;
+    --white: #FFFFFF;
+    --circuit-dim: rgba(77, 163, 255, 0.4);
+}
+
+/* Background Environment */
+body {
+    background-image: url('assets/environment/lone_figure_field.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--deep-navy);
+}
+
+/* Section Base */
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2rem;
+}
+
+.content-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+}
+
+/* Typography */
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
     text-align: center;
-    padding-top: 80vh; /* Pushes content down so you can see the scroll effect */
-    padding-bottom: 200vh; /* Makes the page long so you can scroll */
+}
+
+.hero-content {
+    z-index: 3;
+    position: relative;
+}
+
+.logo-mark {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out 0.8s forwards;
+}
+
+.hero-tagline {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out 1.2s forwards;
+    margin-top: 2rem;
+}
+
+.hero-tagline p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+/* Pulse Overlay */
+.pulse-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(77, 163, 255, 0.1) 0%, transparent 70%);
+    animation: pulse 1s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Section */
+#about {
+    background: rgba(11, 19, 43, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.about-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Platform Section */
+#platform {
+    position: relative;
+}
+
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.platform-node {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 2rem;
+    border-radius: 8px;
+    background: rgba(11, 19, 43, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.platform-node:hover {
+    transform: translateY(-5px);
+    background: rgba(11, 19, 43, 0.8);
+}
+
+.node-light {
+    width: 12px;
+    height: 12px;
+    background: var(--sky-blue);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    box-shadow: 0 0 20px var(--sky-blue);
+    animation: nodePulse 2s ease-in-out infinite;
+}
+
+@keyframes nodePulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.platform-node h3 {
+    color: var(--white);
+    font-weight: 500;
+}
+
+/* Product Overlays */
+.product-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 19, 43, 0.95);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.product-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.overlay-content {
+    text-align: center;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.overlay-content h4 {
+    color: var(--sky-blue);
+    margin-bottom: 1rem;
+}
+
+.learn-more-btn {
+    background: transparent;
+    border: 1px solid var(--sky-blue);
+    color: var(--sky-blue);
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.learn-more-btn:hover {
+    background: var(--sky-blue);
+    color: var(--deep-navy);
+}
+
+/* Experiences Section */
+#experiences {
+    background: rgba(11, 19, 43, 0.7);
+    backdrop-filter: blur(8px);
+}
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.experience-item {
+    text-align: center;
+    position: relative;
+}
+
+.experience-silhouette {
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(180deg, var(--sky-blue) 0%, var(--violet) 100%);
+    margin: 0 auto 1rem;
+    border-radius: 40px 40px 8px 8px;
+    position: relative;
+    opacity: 0.8;
+}
+
+.experience-silhouette::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background: var(--sky-blue);
+    border-radius: 50%;
+}
+
+.experience-metric {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--sky-blue);
+    margin-top: 1rem;
+}
+
+/* Insights Section */
+#insights {
+    background: rgba(11, 19, 43, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.insights-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.insight-tile {
+    background: var(--deep-navy);
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.insight-tile:hover {
+    transform: translateY(-3px);
+}
+
+.tile-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--sky-blue), var(--violet));
+}
+
+.insight-tile h3 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.insight-tile p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.insight-tile time {
+    color: var(--sky-blue);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+}
+
+.contact-content h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    background: transparent;
+    border: 1px solid var(--sky-blue);
+    color: var(--sky-blue);
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 120px;
+}
+
+.contact-btn:hover {
+    background: var(--sky-blue);
+    color: var(--deep-navy);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(77, 163, 255, 0.3);
+}
+
+/* Footer */
+#footer {
+    min-height: 30vh;
+    background: rgba(11, 19, 43, 0.9);
+    backdrop-filter: blur(15px);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .platform-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .experiences-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .contact-btn {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-attachment: scroll;
+    }
+    
+    .hero-tagline p {
+        font-size: 1rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+    }
+    
+    .platform-node {
+        padding: 1.5rem;
+    }
+    
+    .insight-tile {
+        padding: 1.5rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .pulse-overlay {
+        animation: none;
+    }
+    
+    .node-light {
+        animation: none;
+    }
+}
+
+/* Focus States */
+button:focus,
+.platform-node:focus,
+.insight-tile:focus {
+    outline: 2px solid var(--sky-blue);
+    outline-offset: 2px;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.loaded {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
 }
