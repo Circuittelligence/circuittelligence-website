@@ -40,11 +40,14 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(11, 19, 43, 0.9);
-    backdrop-filter: blur(20px);
+    background: 
+        linear-gradient(rgba(11, 19, 43, 0.95), rgba(11, 19, 43, 0.95)),
+        url('assets/circuit-background.png');
+    background-size: 200px 200px;
+    background-repeat: repeat;
     z-index: 1000;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(77, 163, 255, 0.2);
     opacity: 0;
     transform: translateY(-100%);
     transition: all 0.3s ease;
@@ -250,8 +253,12 @@ p {
 
 /* Mission Section */
 #mission {
-    background: rgba(11, 19, 43, 0.8);
-    backdrop-filter: blur(10px);
+    background: 
+        linear-gradient(rgba(11, 19, 43, 0.85), rgba(11, 19, 43, 0.85)),
+        url('assets/circuit-background.png');
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .mission-content {
@@ -272,8 +279,12 @@ p {
 
 /* Mythos Section */
 #mythos {
-    background: rgba(11, 19, 43, 0.7);
-    backdrop-filter: blur(8px);
+    background: 
+        linear-gradient(rgba(11, 19, 43, 0.75), rgba(11, 19, 43, 0.75)),
+        url('assets/circuit-background.png');
+    background-size: 350px 350px;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .mythos-content {
@@ -294,8 +305,12 @@ p {
 
 /* Argonaut Platform Section */
 .platform-section {
-    background: rgba(11, 19, 43, 0.8);
-    backdrop-filter: blur(10px);
+    background: 
+        linear-gradient(rgba(11, 19, 43, 0.8), rgba(11, 19, 43, 0.8)),
+        url('assets/circuit-background.png');
+    background-size: 450px 450px;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .argonaut-hero {
@@ -401,8 +416,12 @@ p {
 
 /* Prism Section */
 #prism {
-    background: rgba(11, 19, 43, 0.7);
-    backdrop-filter: blur(8px);
+    background: 
+        linear-gradient(rgba(11, 19, 43, 0.75), rgba(11, 19, 43, 0.75)),
+        url('assets/circuit-background.png');
+    background-size: 380px 380px;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .prism-content {
@@ -471,8 +490,12 @@ p {
 
 /* Content Sections */
 #efficiency, #pricing, #features {
-    background: rgba(11, 19, 43, 0.8);
-    backdrop-filter: blur(10px);
+    background: 
+        linear-gradient(rgba(11, 19, 43, 0.8), rgba(11, 19, 43, 0.8)),
+        url('assets/circuit-background.png');
+    background-size: 420px 420px;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .efficiency-content, .pricing-content, .features-content {
@@ -493,8 +516,12 @@ p {
 
 /* Proof Section */
 #proof {
-    background: rgba(11, 19, 43, 0.8);
-    backdrop-filter: blur(10px);
+    background: 
+        linear-gradient(rgba(11, 19, 43, 0.8), rgba(11, 19, 43, 0.8)),
+        url('assets/circuit-background.png');
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .proof-content {
@@ -550,8 +577,12 @@ p {
 /* Contact Section */
 #contact {
     text-align: center;
-    background: rgba(11, 19, 43, 0.9);
-    backdrop-filter: blur(15px);
+    background: 
+        linear-gradient(rgba(11, 19, 43, 0.9), rgba(11, 19, 43, 0.9)),
+        url('assets/circuit-background.png');
+    background-size: 350px 350px;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .contact-content h2 {
@@ -612,8 +643,12 @@ p {
 #footer {
     min-height: auto;
     padding: 4rem 2rem 2rem;
-    background: rgba(11, 19, 43, 0.95);
-    backdrop-filter: blur(20px);
+    background: 
+        linear-gradient(rgba(11, 19, 43, 0.95), rgba(11, 19, 43, 0.95)),
+        url('assets/circuit-background.png');
+    background-size: 300px 300px;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 .footer-grid {
