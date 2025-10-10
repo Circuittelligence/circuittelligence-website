@@ -40,17 +40,27 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: 
-        linear-gradient(rgba(11, 19, 43, 0.95), rgba(11, 19, 43, 0.95)),
-        url('assets/circuit-background.png');
-    background-size: 200px 200px;
-    background-repeat: repeat;
+    background: rgba(11, 19, 43, 0.95);
     z-index: 1000;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(77, 163, 255, 0.2);
     opacity: 0;
     transform: translateY(-100%);
     transition: all 0.3s ease;
+}
+
+.navigation-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/circuit-background.png');
+    background-size: 800px 450px;
+    background-repeat: repeat;
+    opacity: 0.15;
+    z-index: -1;
 }
 
 .navigation-header.visible {
@@ -253,18 +263,31 @@ p {
 
 /* Mission Section */
 #mission {
-    background: 
-        linear-gradient(rgba(11, 19, 43, 0.85), rgba(11, 19, 43, 0.85)),
-        url('assets/circuit-background.png');
-    background-size: 400px 400px;
+    background: rgba(11, 19, 43, 0.85);
+    position: relative;
+}
+
+#mission::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/circuit-background.png');
+    background-size: 1200px 675px;
     background-repeat: repeat;
     background-attachment: fixed;
+    opacity: 0.2;
+    z-index: 1;
 }
 
 .mission-content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .mission-content h2 {
@@ -279,18 +302,31 @@ p {
 
 /* Mythos Section */
 #mythos {
-    background: 
-        linear-gradient(rgba(11, 19, 43, 0.75), rgba(11, 19, 43, 0.75)),
-        url('assets/circuit-background.png');
-    background-size: 350px 350px;
+    background: rgba(11, 19, 43, 0.75);
+    position: relative;
+}
+
+#mythos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/circuit-background.png');
+    background-size: 1000px 562px;
     background-repeat: repeat;
     background-attachment: fixed;
+    opacity: 0.18;
+    z-index: 1;
 }
 
 .mythos-content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .mythos-content h2 {
@@ -305,16 +341,29 @@ p {
 
 /* Argonaut Platform Section */
 .platform-section {
-    background: 
-        linear-gradient(rgba(11, 19, 43, 0.8), rgba(11, 19, 43, 0.8)),
-        url('assets/circuit-background.png');
-    background-size: 450px 450px;
+    background: rgba(11, 19, 43, 0.8);
+    position: relative;
+}
+
+.platform-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/circuit-background.png');
+    background-size: 1400px 787px;
     background-repeat: repeat;
     background-attachment: fixed;
+    opacity: 0.22;
+    z-index: 1;
 }
 
 .argonaut-hero {
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .argonaut-visual {
@@ -416,16 +465,29 @@ p {
 
 /* Prism Section */
 #prism {
-    background: 
-        linear-gradient(rgba(11, 19, 43, 0.75), rgba(11, 19, 43, 0.75)),
-        url('assets/circuit-background.png');
-    background-size: 380px 380px;
+    background: rgba(11, 19, 43, 0.75);
+    position: relative;
+}
+
+#prism::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/circuit-background.png');
+    background-size: 1100px 618px;
     background-repeat: repeat;
     background-attachment: fixed;
+    opacity: 0.18;
+    z-index: 1;
 }
 
 .prism-content {
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .prism-content h2 {
@@ -448,6 +510,8 @@ p {
     gap: 2rem;
     flex-wrap: wrap;
     margin-top: 3rem;
+    position: relative;
+    z-index: 2;
 }
 
 .prism-format {
@@ -490,18 +554,31 @@ p {
 
 /* Content Sections */
 #efficiency, #pricing, #features {
-    background: 
-        linear-gradient(rgba(11, 19, 43, 0.8), rgba(11, 19, 43, 0.8)),
-        url('assets/circuit-background.png');
-    background-size: 420px 420px;
+    background: rgba(11, 19, 43, 0.8);
+    position: relative;
+}
+
+#efficiency::before, #pricing::before, #features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/circuit-background.png');
+    background-size: 1300px 731px;
     background-repeat: repeat;
     background-attachment: fixed;
+    opacity: 0.2;
+    z-index: 1;
 }
 
 .efficiency-content, .pricing-content, .features-content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .efficiency-content h2, .pricing-content h2, .features-content h2 {
@@ -516,18 +593,31 @@ p {
 
 /* Proof Section */
 #proof {
-    background: 
-        linear-gradient(rgba(11, 19, 43, 0.8), rgba(11, 19, 43, 0.8)),
-        url('assets/circuit-background.png');
-    background-size: 400px 400px;
+    background: rgba(11, 19, 43, 0.8);
+    position: relative;
+}
+
+#proof::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/circuit-background.png');
+    background-size: 1200px 675px;
     background-repeat: repeat;
     background-attachment: fixed;
+    opacity: 0.2;
+    z-index: 1;
 }
 
 .proof-content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .proof-content h2 {
@@ -541,11 +631,16 @@ p {
     opacity: 0.9;
 }
 
-.proof-metrics {
+.footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}ve;
+    z-index: 2;
 }
 
 .metric-item {
@@ -577,12 +672,28 @@ p {
 /* Contact Section */
 #contact {
     text-align: center;
-    background: 
-        linear-gradient(rgba(11, 19, 43, 0.9), rgba(11, 19, 43, 0.9)),
-        url('assets/circuit-background.png');
-    background-size: 350px 350px;
+    background: rgba(11, 19, 43, 0.9);
+    position: relative;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/circuit-background.png');
+    background-size: 1000px 562px;
     background-repeat: repeat;
     background-attachment: fixed;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 2;
 }
 
 .contact-content h2 {
@@ -601,6 +712,8 @@ p {
     gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
 }
 
 .contact-btn {
@@ -643,12 +756,23 @@ p {
 #footer {
     min-height: auto;
     padding: 4rem 2rem 2rem;
-    background: 
-        linear-gradient(rgba(11, 19, 43, 0.95), rgba(11, 19, 43, 0.95)),
-        url('assets/circuit-background.png');
-    background-size: 300px 300px;
+    background: rgba(11, 19, 43, 0.95);
+    position: relative;
+}
+
+#footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/circuit-background.png');
+    background-size: 900px 506px;
     background-repeat: repeat;
     background-attachment: fixed;
+    opacity: 0.12;
+    z-index: 1;
 }
 
 .footer-grid {
