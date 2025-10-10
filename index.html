@@ -12,6 +12,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
+    <!-- Navigation Header -->
+    <header id="navigation" class="navigation-header">
+        <div class="nav-container">
+            <div class="logo-nav">
+                <h1>Circuittelligence</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="#argonaut">Argonaut</a>
+                <a href="#proof">Proof</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
     <!-- A. Entry / Hero Section -->
     <section id="hero" class="section">
         <div class="hero-content">
@@ -25,154 +39,185 @@
         <div class="pulse-overlay" id="pulseOverlay"></div>
     </section>
 
-    <!-- B. About / Mission Section -->
-    <section id="about" class="section">
+    <!-- B. Mission Section -->
+    <section id="mission" class="section">
         <div class="content-container">
-            <div class="about-content">
-                <p>Circuittelligence builds systems that think with you, not for you.</p>
-                <p>Each circuit honors human intent.</p>
-                <p>Proof lives in clarity.</p>
+            <div class="mission-content">
+                <h2>Our mission</h2>
+                <p>Circuittelligence builds measured intelligence systems that amplify human judgment. Every system we create turns brand behavior into quantified clarity—observed, analyzed, and made actionable without intrusion.</p>
             </div>
         </div>
     </section>
 
-    <!-- C. Platform / Products Section -->
-    <section id="platform" class="section">
+    <!-- C. Mythos Section -->
+    <section id="mythos" class="section">
         <div class="content-container">
-            <div class="platform-grid">
-                <div class="platform-node" data-product="argonaut">
-                    <div class="node-light"></div>
-                    <h3>Argonaut</h3>
-                </div>
-                <div class="platform-node" data-product="prism">
-                    <div class="node-light"></div>
-                    <h3>Prism</h3>
-                </div>
-                <div class="platform-node" data-product="olympus">
-                    <div class="node-light"></div>
-                    <h3>Olympus</h3>
-                </div>
-                <div class="platform-node" data-product="brandquest">
-                    <div class="node-light"></div>
-                    <h3>BrandQuest</h3>
-                </div>
-                <div class="platform-node" data-product="proposal">
-                    <div class="node-light"></div>
-                    <h3>Proposal Builder</h3>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Product Detail Overlays -->
-        <div class="product-overlay" id="argonaut-overlay">
-            <div class="overlay-content">
-                <h4>Argonaut</h4>
-                <p>AI-powered navigation through complex business decisions.</p>
-                <button class="learn-more-btn">Learn More</button>
-            </div>
-        </div>
-        
-        <div class="product-overlay" id="prism-overlay">
-            <div class="overlay-content">
-                <h4>Prism</h4>
-                <p>Multi-dimensional analysis for strategic clarity.</p>
-                <button class="learn-more-btn">Learn More</button>
-            </div>
-        </div>
-        
-        <div class="product-overlay" id="olympus-overlay">
-            <div class="overlay-content">
-                <h4>Olympus</h4>
-                <p>Peak performance optimization for operational excellence.</p>
-                <button class="learn-more-btn">Learn More</button>
-            </div>
-        </div>
-        
-        <div class="product-overlay" id="brandquest-overlay">
-            <div class="overlay-content">
-                <h4>BrandQuest</h4>
-                <p>Intelligent brand strategy and narrative development.</p>
-                <button class="learn-more-btn">Learn More</button>
-            </div>
-        </div>
-        
-        <div class="product-overlay" id="proposal-overlay">
-            <div class="overlay-content">
-                <h4>Proposal Builder</h4>
-                <p>Automated proposal generation with human insight.</p>
-                <button class="learn-more-btn">Learn More</button>
+            <div class="mythos-content">
+                <h2>Intelligence made human</h2>
+                <p>Small and medium enterprises face operational complexity without enterprise resources. Circuittelligence delivers AI integration that serves business owners directly—clarifying brand identity, automating content creation, and orchestrating customer workflows with transparent, measurable results.</p>
             </div>
         </div>
     </section>
 
-    <!-- D. Measured Experiences Section -->
-    <section id="experiences" class="section">
+    <!-- D. Argonaut Platform Section -->
+    <section id="argonaut" class="section platform-section">
         <div class="content-container">
-            <div class="experiences-grid">
-                <div class="experience-item">
-                    <div class="experience-silhouette baker"></div>
-                    <div class="experience-metric">+18% clarity gain</div>
+            <div class="argonaut-hero">
+                <div class="argonaut-visual">
+                    <div class="portal-preview">
+                        <div class="portal-frame">
+                            <div class="portal-content">
+                                <div class="portal-grid">
+                                    <div class="portal-node"></div>
+                                    <div class="portal-node"></div>
+                                    <div class="portal-node"></div>
+                                    <div class="portal-node"></div>
+                                    <div class="portal-node"></div>
+                                    <div class="portal-node"></div>
+                                </div>
+                                <div class="portal-text">Argonaut Portal</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="experience-item">
-                    <div class="experience-silhouette designer"></div>
-                    <div class="experience-metric">4.2h saved</div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-silhouette teacher"></div>
-                    <div class="experience-metric">+32% efficiency</div>
+                <div class="argonaut-text">
+                    <h2>Argonaut</h2>
+                    <p>Maps the patterns behind your decisions, showing where clarity leads next. Uses 72 discriminators to identify your brand archetype and measure alignment across customer touchpoints.</p>
+                    <button class="cta-button">Start discovery</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- E. Insights / Journal Section -->
-    <section id="insights" class="section">
+    <!-- E. Prism Visual Studio Section -->
+    <section id="prism" class="section">
         <div class="content-container">
-            <div class="insights-header">
-                <h2>Insights</h2>
-            </div>
-            <div class="insights-grid">
-                <article class="insight-tile">
-                    <div class="tile-border"></div>
-                    <h3>Human-First AI Implementation</h3>
-                    <p>Exploring the balance between automation and human agency in modern business systems.</p>
-                    <time>2025-09-15</time>
-                </article>
-                <article class="insight-tile">
-                    <div class="tile-border"></div>
-                    <h3>Measuring ROI in AI Integration</h3>
-                    <p>Quantitative approaches to evaluating the impact of intelligent systems on business outcomes.</p>
-                    <time>2025-09-08</time>
-                </article>
-                <article class="insight-tile">
-                    <div class="tile-border"></div>
-                    <h3>The Circuit Paradigm</h3>
-                    <p>Understanding how interconnected systems create emergent intelligence while preserving human control.</p>
-                    <time>2025-09-01</time>
-                </article>
+            <div class="prism-content">
+                <h2>Prism</h2>
+                <p>Turns data into structured light—insight that reveals without noise. Generates brand-aligned visual content across platforms, maintaining consistency while reducing production time from hours to minutes.</p>
+                <div class="prism-visual-grid">
+                    <div class="prism-format instagram">
+                        <div class="format-preview">Instagram</div>
+                    </div>
+                    <div class="prism-format facebook">
+                        <div class="format-preview">Facebook</div>
+                    </div>
+                    <div class="prism-format other">
+                        <div class="format-preview">Other Platforms</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- F. Contact / Join Section -->
+    <!-- F. Measured Efficiency Section -->
+    <section id="efficiency" class="section">
+        <div class="content-container">
+            <div class="efficiency-content">
+                <h2>Measured efficiency</h2>
+                <p>Automated systems return operational hours to strategic work. Content that required manual creation now deploys on schedule. Customer interactions that needed constant oversight now run with defined parameters and transparent reporting.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- G. Service Tiers Section -->
+    <section id="pricing" class="section">
+        <div class="content-container">
+            <div class="pricing-content">
+                <h2>Service tiers</h2>
+                <p>Three engagement levels aligned to business scale and operational need. Every tier includes brand audit, quantified deliverables, and defined timelines.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- H. Integrated Systems Section -->
+    <section id="features" class="section">
+        <div class="content-container">
+            <div class="features-content">
+                <h2>Integrated systems</h2>
+                <p>Codex archetype analysis, content brief generation, and workflow automation extend across discovery, creation, and deployment. Each component operates independently and connects through measured data flow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- I. Proof in Practice Section -->
+    <section id="proof" class="section">
+        <div class="content-container">
+            <div class="proof-content">
+                <h2>Proof in practice</h2>
+                <p>Real implementation results from active engagements. Measured improvements in brand clarity, content consistency, and operational efficiency. Every metric traceable to methodology.</p>
+                <div class="proof-metrics">
+                    <div class="metric-item">
+                        <div class="metric-value">+18%</div>
+                        <div class="metric-label">Brand clarity gain</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">4.2h</div>
+                        <div class="metric-label">Daily time saved</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">+32%</div>
+                        <div class="metric-label">Content efficiency</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- J. Contact / CTA Section -->
     <section id="contact" class="section">
         <div class="content-container">
             <div class="contact-content">
-                <h2>Start the circuit.</h2>
+                <h2>Begin the next circuit</h2>
+                <p>Brand discovery starts with measurement. Schedule an initial assessment or explore Argonaut directly.</p>
                 <div class="contact-buttons">
-                    <button class="contact-btn" data-action="partner">Partner</button>
-                    <button class="contact-btn" data-action="careers">Careers</button>
-                    <button class="contact-btn" data-action="press">Press</button>
+                    <button class="contact-btn primary" data-action="contact">Contact us</button>
+                    <button class="contact-btn secondary" data-action="argonaut">Explore Argonaut</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- G. Footer / Signature -->
+    <!-- K. Footer -->
     <footer id="footer" class="section">
         <div class="content-container">
-            <div class="footer-content">
-                <p>Powered by Circuittelligence.</p>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <a href="#argonaut">Argonaut</a>
+                    <a href="#prism">Prism</a>
+                    <a href="#olympus">Olympus</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="#documentation">Documentation</a>
+                    <a href="#api">API access</a>
+                    <a href="#tutorials">Tutorials</a>
+                    <a href="#library">Circuit library</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#about">About</a>
+                    <a href="#governance">Governance</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#privacy">Privacy policy</a>
+                    <a href="#terms">Terms of use</a>
+                    <a href="#data">Data integrity</a>
+                    <a href="#accessibility">Accessibility</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <a href="#linkedin">LinkedIn</a>
+                    <a href="#youtube">YouTube</a>
+                    <a href="#github">GitHub</a>
+                    <a href="#newsletter">Newsletter</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <p>© 2025 Circuittelligence · Privacy · Terms · Powered by Circuittelligence</p>
             </div>
         </div>
     </footer>
