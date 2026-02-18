@@ -1,0 +1,17 @@
+{
+  "name": "open-claw-worker",
+  "version": "1.0.0",
+  "description": "OpenClaw AI agent worker with D1, Workers AI, and Linear integration",
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "keywords": ["cloudflare", "workers", "ai", "d1", "linear"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250115.0",
+    "wrangler": "^4.66.0"
+  }
+}

@@ -1,0 +1,13 @@
+name = "open-claw-worker"
+main = "src/index.ts"
+compatibility_date = "2025-02-18"
+account_id = "87633884af93e13f28f3e1b6f80cfbaa"
+nodejs_compat = true
+
+[ai]
+binding = "AI"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "open-claw-db"
+database_id = "2ea565a0-6e52-47fd-bd8e-c0f462b2152c"
