@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Support Circuittelligence. One‑time contributions and monthly support fund the AEP (Agentic Execution Protocol): sovereign, auditable AI infrastructure built for real operations—memory, constraints, orchestration, and verification.">
+<link rel="canonical" href="https://circuittelligence.com/fund">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Support Circuittelligence — Fund the AEP">
+<meta property="og:description" content="Choose one‑time or monthly support. Your contribution funds deterministic infrastructure: memory systems, constraint gates, and orchestration rails.">
+<meta property="og:url" content="https://circuittelligence.com/fund">
+<meta name="twitter:card" content="summary">
+
+<title>Support Circuittelligence — Fund the AEP (Agentic Execution Protocol)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --surface-0: #050A18;
+  --surface-1: #0F172A;
+  --surface-2: #1E293B;
+  --border-subtle: #334155;
+  --text-pri: #F8FAFC;
+  --text-sec: #94A3B8;
+  --text-tert: #64748B;
+  --signal-info: #3B82F6;
+  --signal-warn: #FFAA00;
+  --signal-success: #10B981;
+  --signal-error: #EF4444;
+  --ease-standard: cubic-bezier(0.2, 0.0, 0.2, 1.0);
+  --ease-entrance: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --ease-exit: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--surface-0);
+  color: var(--text-pri);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+::selection { background: var(--signal-info); color: white; }
+
+/* NOISE */
+.noise-layer {
+  position: fixed; inset: 0; z-index: 9999;
+  pointer-events: none; opacity: 0.04; mix-blend-mode: overlay;
+}
+
+/* CIRCUIT TRACES */
+.circuit-trace-h {
+  position: absolute; height: 1px;
+  background: repeating-linear-gradient(90deg, var(--signal-info) 0px, var(--signal-info) 4px, transparent 4px, transparent 6px);
+  opacity: 0.3; filter: drop-shadow(0 0 3px rgba(59,130,246,0.4));
+  animation: trace-pulse 3s ease-in-out infinite; pointer-events: none;
+}
+.circuit-trace-v {
+  position: absolute; width: 1px;
+  background: repeating-linear-gradient(180deg, var(--signal-info) 0px, var(--signal-info) 4px, transparent 4px, transparent 6px);
+  opacity: 0.3; filter: drop-shadow(0 0 3px rgba(59,130,246,0.4));
+  animation: trace-pulse 3s ease-in-out infinite; pointer-events: none;
+}
+.circuit-node {
+  position: absolute; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--signal-info);
+  box-shadow: 0 0 8px rgba(59,130,246,0.6), 0 0 20px rgba(59,130,246,0.2);
+  animation: node-glow 3s ease-in-out infinite; pointer-events: none; z-index: 2;
+}
+.circuit-node-amber {
+  background: var(--signal-warn);
+  box-shadow: 0 0 8px rgba(255,170,0,0.6), 0 0 20px rgba(255,170,0,0.2);
+}
+.circuit-node-success {
+  background: var(--signal-success);
+  box-shadow: 0 0 8px rgba(16,185,129,0.6), 0 0 20px rgba(16,185,129,0.2);
+}
+
+@keyframes trace-pulse { 0%,100%{opacity:0.2} 50%{opacity:0.45} }
+@keyframes node-glow { 0%,100%{transform:scale(1);opacity:0.7} 50%{transform:scale(1.4);opacity:1} }
+@keyframes trace-runner-h { 0%{left:-5%} 100%{left:105%} }
+@keyframes trace-runner-v { 0%{top:-5%} 100%{top:105%} }
+
+.trace-runner {
+  position: absolute; width: 40px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--signal-info), transparent);
+  animation: trace-runner-h 4s linear infinite; pointer-events: none;
+}
+.trace-runner-v {
+  width: 1px; height: 40px;
+  background: linear-gradient(180deg, transparent, var(--signal-info), transparent);
+  animation: trace-runner-v 5s linear infinite;
+}
+
+/* LAYOUT */
+.content-frame { max-width: 1280px; margin: 0 auto; padding: 0 48px; position: relative; }
+@media (max-width: 768px) { .content-frame { padding: 0 24px; } }
+@media (max-width: 480px) { .content-frame { padding: 0 16px; } }
+
+/* TYPOGRAPHY */
+.type-display { font-size: clamp(2.5rem,1.5rem + 3vw,4.5rem); line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; }
+.type-title-1 { font-size: clamp(1.5rem,1.2rem + 1.5vw,2.5rem); line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; }
+.type-title-2 { font-size: clamp(1.25rem,1.1rem + 0.5vw,1.5rem); line-height: 1.3; font-weight: 500; letter-spacing: -0.01em; }
+.type-body { font-size: 1rem; line-height: 1.5; font-weight: 400; }
+.type-label { font-size: 0.875rem; line-height: 1.4; font-weight: 500; letter-spacing: 0.01em; }
+.type-caption { font-size: 0.75rem; line-height: 1.4; font-weight: 400; letter-spacing: 0.02em; }
+.mono { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
+.kinetic-weight {
+  transition: font-variation-settings 0.2s var(--ease-standard);
+  font-variation-settings: 'wght' 400; display: inline-block;
+}
+.kinetic-weight:hover { font-variation-settings: 'wght' 600; }
+
+/* BENTO MODULES */
+.bento-module {
+  background: var(--surface-1); border: 1px solid var(--border-subtle); border-radius: 12px;
+  position: relative; overflow: hidden;
+  transition: transform 0.35s var(--ease-standard), border-color 0.35s var(--ease-standard);
+}
+.bento-module:hover { transform: scale(1.02); border-color: rgba(59,130,246,0.25); }
+.bento-module::before {
+  content:''; position: absolute; top:-1px; left:-1px; width:32px; height:32px;
+  border-top:1px dashed var(--signal-info); border-left:1px dashed var(--signal-info);
+  border-top-left-radius:12px; opacity:0.4; pointer-events:none;
+  filter: drop-shadow(0 0 2px rgba(59,130,246,0.3));
+}
+.bento-module::after {
+  content:''; position: absolute; bottom:-1px; right:-1px; width:32px; height:32px;
+  border-bottom:1px dashed var(--signal-info); border-right:1px dashed var(--signal-info);
+  border-bottom-right-radius:12px; opacity:0.4; pointer-events:none;
+  filter: drop-shadow(0 0 2px rgba(59,130,246,0.3));
+}
+
+.bento-module-warn::before { border-color: var(--signal-warn); filter: drop-shadow(0 0 2px rgba(255,170,0,0.3)); }
+.bento-module-warn::after { border-color: var(--signal-warn); filter: drop-shadow(0 0 2px rgba(255,170,0,0.3)); }
+.bento-module-warn:hover { border-color: rgba(255,170,0,0.25); }
+
+.bento-module-success::before { border-color: var(--signal-success); filter: drop-shadow(0 0 2px rgba(16,185,129,0.3)); }
+.bento-module-success::after { border-color: var(--signal-success); filter: drop-shadow(0 0 2px rgba(16,185,129,0.3)); }
+.bento-module-success:hover { border-color: rgba(16,185,129,0.25); }
+
+.bento-grid { display: grid; gap: 24px; }
+@media (max-width: 640px) { .bento-grid { gap: 16px; } }
+
+/* SILENCE MODULE */
+.silence-module {
+  background: var(--surface-0); border: 1px dashed var(--border-subtle); border-radius: 12px;
+  min-height: 100px; position: relative; opacity: 0.5;
+}
+.silence-module::before {
+  content:'//SILENCE'; position: absolute; bottom:12px; right:16px;
+  font-family: var(--font-mono); font-size:0.6rem; letter-spacing:0.15em;
+  color: var(--border-subtle); text-transform: uppercase;
+}
+
+/* NAV */
+.nav-bar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(5,10,24,0.85); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(51,65,85,0.5); padding: 0 48px;
+}
+@media (max-width: 768px) { .nav-bar { padding: 0 24px; } }
+.nav-inner { max-width: 1280px; margin: 0 auto; height: 72px; display: flex; align-items: center; justify-content: space-between; }
+.nav-links { display: flex; gap: 40px; }
+.nav-links a {
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-tert); text-decoration: none;
+  transition: font-variation-settings 0.2s var(--ease-standard), color 0.2s;
+  font-variation-settings: 'wght' 400;
+}
+.nav-links a:hover { color: var(--text-pri); font-variation-settings: 'wght' 600; }
+.nav-links a.active { color: var(--signal-info); border-bottom: 1px solid rgba(59,130,246,0.4); padding-bottom: 2px; }
+@media (max-width: 640px) { .nav-links { display: none; } }
+
+.sovereign-mark {
+  width: 44px; height: 44px; background: var(--signal-info); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--surface-0); font-family: var(--font-mono); font-weight: 700; font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(59,130,246,0.35); flex-shrink: 0; position: relative; z-index: 50;
+}
+.nav-logo-group { display: flex; align-items: center; gap: 16px; padding: 12px 0; }
+.nav-logo-text { display: flex; flex-direction: column; }
+.nav-logo-text .name { font-weight: 700; font-size: 0.85rem; letter-spacing: -0.01em; }
+.nav-logo-text .version { font-family: var(--font-mono); font-size: 0.55rem; letter-spacing: 0.15em; color: var(--signal-info); text-transform: uppercase; }
+
+/* SECTIONS */
+.section-break { padding: 96px 0; border-top: 1px solid var(--border-subtle); position: relative; }
+@media (max-width: 768px) { .section-break { padding: 64px 0; } }
+
+.section-header { margin-bottom: 48px; }
+
+/* HERO */
+.hero { position: relative; padding: 120px 0 80px; overflow: hidden; }
+@media (max-width: 768px) { .hero { padding: 80px 0 48px; } }
+
+/* STAT GRID */
+.stat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--border-subtle); border: 1px solid var(--border-subtle); border-radius: 12px;
+  overflow: hidden; margin-bottom: 48px;
+}
+@media (max-width: 640px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+.stat-cell { background: var(--surface-1); padding: 24px; }
+.stat-label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-tert); margin-bottom: 8px; }
+.stat-value { font-family: var(--font-mono); font-size: 1.5rem; color: var(--text-pri); }
+.stat-value-success { color: var(--signal-success); }
+
+/* ALLOCATION BAR */
+.alloc-bar-track { height: 4px; background: var(--surface-2); width: 100%; border-radius: 2px; overflow: hidden; }
+.alloc-bar-fill {
+  height: 100%; border-radius: 2px;
+  background: var(--signal-info);
+  filter: drop-shadow(0 0 4px rgba(59,130,246,0.4));
+  transition: width 0.6s var(--ease-entrance);
+}
+
+/* PRIMITIVE ROW */
+.primitive-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0; border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.2s;
+}
+.primitive-row:hover { background: rgba(59,130,246,0.03); }
+.primitive-name { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; color: var(--signal-info); min-width: 80px; }
+.primitive-desc { font-size: 0.875rem; color: var(--text-sec); }
+.primitive-chevron { color: var(--text-tert); font-size: 0.75rem; }
+
+/* THESIS CARD */
+.thesis-number {
+  position: absolute; top: 20px; right: 24px;
+  font-family: var(--font-mono); font-size: 3rem; font-weight: 800;
+  color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none;
+}
+
+/* CTA */
+.cta-button {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 32px; background: var(--signal-info); color: var(--surface-0);
+  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+  border-radius: 6px; border: none; cursor: pointer;
+  transition: transform 0.2s var(--ease-standard), box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(59,130,246,0.25);
+}
+.cta-button:hover { transform: scale(1.04); box-shadow: 0 8px 30px rgba(59,130,246,0.35); }
+.cta-button:focus-visible { outline: 3px solid var(--signal-info); outline-offset: 2px; }
+
+/* TERMINAL BLOCK */
+.terminal-block {
+  background: var(--surface-0); border: 1px solid var(--border-subtle); border-radius: 8px;
+  padding: 24px; font-family: var(--font-mono); font-size: 0.7rem;
+  line-height: 1.8; color: var(--text-tert);
+}
+.terminal-block .prompt { color: var(--signal-info); }
+
+/* FOOTER */
+.footer { padding: 64px 0; border-top: 1px solid var(--border-subtle); position: relative; }
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+@media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; } }
+.footer-bar {
+  padding-top: 32px; border-top: 1px solid var(--border-subtle);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+}
+.footer-bar span, .footer-bar a {
+  font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--text-tert); text-transform: uppercase; text-decoration: none;
+}
+.status-dot {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--signal-success); box-shadow: 0 0 6px rgba(16,185,129,0.5); margin-right: 6px;
+}
+.disc-list { list-style: none; padding: 0; }
+.disc-list li { position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 0.875rem; color: var(--text-tert); }
+.disc-list li::before { content:''; position: absolute; left:0; top:8px; width:4px; height:4px; border-radius:50%; background: var(--signal-info); }
+
+/* MODAL */
+.intake-modal {
+  position: fixed; inset: 0; z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: opacity 0.35s var(--ease-standard), visibility 0.35s;
+}
+.intake-modal.modal-open { opacity: 1; visibility: visible; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(5,10,24,0.85); backdrop-filter: blur(8px); }
+.modal-container {
+  position: relative; width: 90%; max-width: 680px; max-height: 90vh;
+  background: var(--surface-1); border: 1px solid var(--border-subtle); border-radius: 16px;
+  overflow: hidden; transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s var(--ease-entrance); display: flex; flex-direction: column;
+}
+.modal-open .modal-container { transform: translateY(0) scale(1); }
+.modal-container::before {
+  content:''; position: absolute; top:-1px; left:-1px; width:48px; height:48px;
+  border-top:1px dashed var(--signal-info); border-left:1px dashed var(--signal-info);
+  border-top-left-radius:16px; opacity:0.5; pointer-events:none;
+  filter: drop-shadow(0 0 3px rgba(59,130,246,0.4)); z-index:2;
+}
+.modal-container::after {
+  content:''; position: absolute; bottom:-1px; right:-1px; width:48px; height:48px;
+  border-bottom:1px dashed var(--signal-info); border-right:1px dashed var(--signal-info);
+  border-bottom-right-radius:16px; opacity:0.5; pointer-events:none;
+  filter: drop-shadow(0 0 3px rgba(59,130,246,0.4)); z-index:2;
+}
+.modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 32px; border-bottom: 1px solid var(--border-subtle); position: relative; flex-shrink: 0;
+}
+.modal-header::after {
+  content:''; position: absolute; bottom:-1px; left:32px; right:32px; height:1px;
+  background: repeating-linear-gradient(90deg, var(--signal-info) 0px, var(--signal-info) 4px, transparent 4px, transparent 6px);
+  opacity:0.3; filter: drop-shadow(0 0 2px rgba(59,130,246,0.3));
+}
+.modal-close {
+  width:32px; height:32px; background: var(--surface-2); border:1px solid var(--border-subtle);
+  border-radius:6px; color: var(--text-sec); font-size:1.1rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition: border-color 0.2s, color 0.2s; line-height:1;
+}
+.modal-close:hover { border-color: var(--signal-error); color: var(--signal-error); }
+.modal-close:focus-visible { outline: 3px solid var(--signal-info); outline-offset: 2px; }
+.modal-body { flex:1; overflow:hidden; }
+.modal-body iframe { width:100%; height:75vh; max-height:600px; border:none; display:block; }
+
+/* ENTRY ANIMATIONS */
+@keyframes module-enter { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+.anim-enter { opacity:0; animation: module-enter 0.5s var(--ease-entrance) forwards; }
+.anim-d1{animation-delay:0.05s} .anim-d2{animation-delay:0.1s} .anim-d3{animation-delay:0.15s}
+.anim-d4{animation-delay:0.2s} .anim-d5{animation-delay:0.25s} .anim-d6{animation-delay:0.3s}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { animation-duration:0.01ms!important; animation-iteration-count:1!important; transition-duration:0.01ms!important; }
+  .anim-enter { opacity:1; }
+  .circuit-trace-h,.circuit-trace-v,.circuit-node,.trace-runner { display:none; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Circuittelligence",
+  "url": "https://circuittelligence.com/",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "telephone": "+16197529899",
+    "availableLanguage": ["en"]
+  }]
+}
+</script>
+
+</head>
+<body>
+
+<canvas id="noiseCanvas" class="noise-layer"></canvas>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <div class="nav-logo-group">
+      <div class="sovereign-mark">C.</div>
+      <div class="nav-logo-text">
+        <span class="name">Circuittelligence</span>
+        <span class="version">Sys.V2.5 // Online</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="kinetic-weight">Product</a>
+      <a href="fund.html" class="kinetic-weight active">Fund</a>
+      <a href="index.html" class="kinetic-weight">Doctrine</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="circuit-trace-h" style="position:absolute; top:65%; left:0; width:100%;">
+    <div class="trace-runner" style="animation-delay:0.5s;"></div>
+  </div>
+  <div class="circuit-trace-v" style="position:absolute; top:15%; right:12%; height:65%;">
+    <div class="trace-runner trace-runner-v" style="animation-delay:2s;"></div>
+  </div>
+  <div class="circuit-node-success" style="position:absolute; top:65%; right:12%; width:6px; height:6px; border-radius:50; background:var(--signal-success); box-shadow:0 0 8px rgba(16,185,129,0.6); animation:node-glow 3s ease-in-out infinite; pointer-events:none; z-index:2;"></div>
+
+  <div class="content-frame">
+    <div class="anim-enter anim-d1" style="display:inline-flex; align-items:center; gap:8px; padding-left:12px; border-left:2px solid var(--signal-success); margin-bottom:32px;">
+      <span class="mono" style="color: var(--signal-success);">Support Channels // Live</span>
+    </div>
+
+    <h1 class="type-display anim-enter anim-d2" style="max-width:900px; margin-bottom:32px;">
+      Fund the<br>
+      <span style="color: var(--text-sec); font-variation-settings:'wght' 500;">AEP Build</span>
+    </h1>
+
+    <p class="anim-enter anim-d3" style="font-size:1.125rem; color:var(--text-sec); max-width:560px; line-height:1.7; margin-bottom:48px; font-weight:300; padding-left:24px; border-left:1px solid var(--border-subtle);">
+      Circuittelligence is the living laboratory for the AEP (Agentic Execution Protocol). Your support funds deterministic infrastructure: memory systems (LOCI), archetype discovery (NOMEN), orchestration rails (NOSTOS), and constraint gates (KOSMOS). <strong style="color:var(--text-pri);">We build what survives production.</strong>
+    </p>
+
+    <!-- SUPPORT GRID -->
+    <div class="stat-grid anim-enter anim-d4" aria-label="Support options summary">
+      <div class="stat-cell">
+        <div class="stat-label">One‑time</div>
+        <div class="stat-value">Any amount</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">Monthly</div>
+        <div class="stat-value">$5+</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">Use of Funds</div>
+        <div class="stat-value">INFRA</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">Support</div>
+        <div class="stat-value stat-value-success">OPEN</div>
+      </div>
+    </div>
+
+    <div class="anim-enter anim-d5" style="display:flex; flex-wrap:wrap; gap:14px;">
+      <a class="cta-button" href="https://buy.stripe.com/5kQdR99M4bZMcTk82n7g401" target="_blank" rel="noopener">One‑time Support →</a>
+      <a class="cta-button" href="https://buy.stripe.com/dRm3cvf6o2pc3iK96r7g400" target="_blank" rel="noopener" style="background: var(--signal-success); box-shadow: 0 4px 20px rgba(16,185,129,0.25);">Monthly Support →</a>
+    </div>
+
+    <p class="anim-enter anim-d6" style="margin-top:18px; color:var(--text-tert); max-width:640px; font-size:0.9rem;">
+      Monthly support is the durable subscription that keeps the AEP build moving. One‑time support is the fastest way to contribute without commitment.
+    </p>
+    <div class="anim-enter anim-d6" style="margin-top:16px; display:flex; gap:16px; flex-wrap:wrap;">
+      <a class="kinetic-weight" href="index.html">← Back to Home</a>
+      <a class="kinetic-weight" href="index.html">Read the Doctrine →</a>
+    </div>
+
+
+    <div class="terminal-block anim-enter anim-d6" style="margin-top:24px;">
+      <span class="prompt">&gt;</span> CURRENT TARGET: ship AEP runtime primitives and public proof assets<br>
+      <span class="prompt">&gt;</span> FUNDING GOES TO: compute, storage, logging, verification, and release cadence<br>
+      <span class="prompt">&gt;</span> SUPPORT LINE: +1 (619) 752-9899 (+16197529899)
+    </div>
+
+  </div>
+</section>
+
+<!-- THESIS -->
+<section class="section-break">
+  <div class="circuit-trace-h" style="position:absolute; top:-1px; left:10%; width:80%;">
+    <div class="trace-runner" style="animation-delay:1s; animation-duration:6s;"></div>
+  </div>
+  <div class="circuit-node" style="top:-4px; left:10%;"></div>
+  <div class="circuit-node circuit-node-amber" style="top:-4px; right:10%;"></div>
+
+  <div class="content-frame">
+    <div class="section-header">
+      <span class="mono" style="color:var(--signal-warn); display:block; margin-bottom:12px;">Why Support</span>
+      <h2 class="type-title-1">Determinism in the Wild</h2>
+    </div>
+
+    <div class="bento-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <!-- Thesis 01 -->
+      <div class="bento-module" style="padding:32px;">
+        <div class="thesis-number">01</div>
+        <div style="font-family:var(--font-mono); font-size:1.25rem; color:var(--signal-info); margin-bottom:16px;">100%</div>
+        <h3 class="type-title-2" style="margin-bottom:12px;">Infrastructure, Not Hype</h3>
+        <p style="font-size:0.875rem; color:var(--text-tert); line-height:1.65;">Funds go to shipping systems that keep promises under real constraints: logging, verification, memory, and safe execution—no vapor claims.</p>
+      </div>
+
+      <!-- Thesis 02 -->
+      <div class="bento-module bento-module-warn" style="padding:32px;">
+        <div class="thesis-number">02</div>
+        <div style="font-family:var(--font-mono); font-size:1.25rem; color:var(--signal-warn); margin-bottom:16px;">AA+</div>
+        <h3 class="type-title-2" style="margin-bottom:12px;">Public Proof, Not Claims</h3>
+        <p style="font-size:0.875rem; color:var(--text-tert); line-height:1.65;">Support underwrites visible outputs: public demos, audited runs, and artifacts that show the AEP working end‑to‑end.</p>
+      </div>
+
+      <!-- Thesis 03 -->
+      <div class="bento-module" style="padding:32px;">
+        <div class="thesis-number">03</div>
+        <div style="font-family:var(--font-mono); font-size:1.25rem; color:var(--signal-info); margin-bottom:16px;">KEY</div>
+        <h3 class="type-title-2" style="margin-bottom:12px;">Sovereign Ownership</h3>
+        <p style="font-size:0.875rem; color:var(--text-tert); line-height:1.65;">Circuittelligence ships sovereign primitives that keep clients in control of their data and outcomes—without selling source to prove results.</p>
+      </div>
+    </div>
+
+    <!-- Responsive fallback -->
+    <style>
+      @media (max-width: 1024px) { .bento-grid[style*="repeat(3"] { grid-template-columns: repeat(2, 1fr) !important; } }
+      @media (max-width: 640px) { .bento-grid[style*="repeat(3"], .bento-grid[style*="repeat(2"] { grid-template-columns: 1fr !important; } }
+    </style>
+  </div>
+</section>
+
+<!-- PRIMITIVE ALLOCATION -->
+<section class="section-break" style="background: rgba(15,23,42,0.3);">
+  <div class="circuit-trace-v" style="position:absolute; top:0; left:50%; height:100%;">
+    <div class="trace-runner trace-runner-v" style="animation-delay:0.8s; animation-duration:7s;"></div>
+  </div>
+
+  <div class="content-frame">
+    <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <!-- Left: Primitives -->
+      <div>
+        <div class="section-header">
+          <span class="mono" style="color:var(--signal-info); display:block; margin-bottom:12px;">What You Fund</span>
+          <h2 class="type-title-1">What Ships Next</h2>
+        </div>
+        <p class="type-body" style="color:var(--text-sec); margin-bottom:32px;">
+          Allocation strategy mirrors the four primitives. We construct a portfolio that owns the entire lifecycle of sovereign intelligence: place, name, journey, order.
+        </p>
+
+        <div>
+          <div class="primitive-row">
+            <span class="primitive-name">LOCI</span>
+            <span class="primitive-desc">Memory Infrastructure</span>
+            <span class="primitive-chevron">→</span>
+          </div>
+          <div class="primitive-row">
+            <span class="primitive-name">NOMEN</span>
+            <span class="primitive-desc">Archetype Discovery</span>
+            <span class="primitive-chevron">→</span>
+          </div>
+          <div class="primitive-row">
+            <span class="primitive-name">NOSTOS</span>
+            <span class="primitive-desc">Orchestration Systems</span>
+            <span class="primitive-chevron">→</span>
+          </div>
+          <div class="primitive-row">
+            <span class="primitive-name">KOSMOS</span>
+            <span class="primitive-desc">Constraint Validation</span>
+            <span class="primitive-chevron">→</span>
+          </div>
+
+        <div class="bento-module" style="padding:24px; margin-top:22px;">
+          <span class="mono" style="color:var(--text-sec); display:block; margin-bottom:10px;">Supporter Deliverables</span>
+          <div style="display:grid; gap:10px;">
+            <div class="primitive-row" style="border-bottom:none; padding:10px 0;">
+              <span class="primitive-name" style="min-width:120px; color:var(--signal-success);">MONTHLY</span>
+              <span class="primitive-desc">Founder letters + release notes + early access drops</span>
+              <span class="primitive-chevron">→</span>
+            </div>
+            <div class="primitive-row" style="border-bottom:none; padding:10px 0;">
+              <span class="primitive-name" style="min-width:120px;">ONE‑TIME</span>
+              <span class="primitive-desc">Direct capital injection to ship the next proof asset</span>
+              <span class="primitive-chevron">→</span>
+            </div>
+            <div class="primitive-row" style="border-bottom:none; padding:10px 0;">
+              <span class="primitive-name" style="min-width:120px; color:var(--signal-info);">AEP</span>
+              <span class="primitive-desc">Long‑term: durable subscription to verified automation outcomes</span>
+              <span class="primitive-chevron">→</span>
+            </div>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;">
+            <a class="cta-button" href="https://buy.stripe.com/5kQdR99M4bZMcTk82n7g401" target="_blank" rel="noopener" style="padding:12px 18px;">One‑time →</a>
+            <a class="cta-button" href="https://buy.stripe.com/dRm3cvf6o2pc3iK96r7g400" target="_blank" rel="noopener" style="padding:12px 18px; background: var(--signal-success); box-shadow: 0 4px 20px rgba(16,185,129,0.25);">Monthly →</a>
+          </div>
+          <p class="type-caption" style="margin-top:12px; color:var(--text-tert);">
+            Support is not equity and carries no promises. It funds execution.
+          </p>
+        </div>
+
+
+      <!-- Right: Allocation Viz -->
+      <div class="bento-module bento-module-success" style="padding:32px;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:32px;">
+          <span class="mono" style="color:var(--text-tert);">Allocation</span>
+          <span class="mono" style="color:var(--text-tert);">◈ Global</span>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:24px;">
+          <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <span class="mono" style="color:var(--text-pri); font-size:0.7rem;">LOCI // Memory</span>
+              <span class="mono" style="color:var(--signal-info); font-size:0.7rem;">35%</span>
+            </div>
+            <div class="alloc-bar-track"><div class="alloc-bar-fill" style="width:35%;"></div></div>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <span class="mono" style="color:var(--text-pri); font-size:0.7rem;">NOMEN // Identity</span>
+              <span class="mono" style="color:var(--signal-info); font-size:0.7rem;">20%</span>
+            </div>
+            <div class="alloc-bar-track"><div class="alloc-bar-fill" style="width:20%;"></div></div>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <span class="mono" style="color:var(--text-pri); font-size:0.7rem;">NOSTOS // Orchestration</span>
+              <span class="mono" style="color:var(--signal-info); font-size:0.7rem;">20%</span>
+            </div>
+            <div class="alloc-bar-track"><div class="alloc-bar-fill" style="width:20%;"></div></div>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <span class="mono" style="color:var(--text-pri); font-size:0.7rem;">KOSMOS // Constraint</span>
+              <span class="mono" style="color:var(--signal-info); font-size:0.7rem;">25%</span>
+            </div>
+            <div class="alloc-bar-track"><div class="alloc-bar-fill" style="width:25%;"></div></div>
+          </div>
+        </div>
+
+        <div class="terminal-block" style="margin-top:32px;">
+          <span class="prompt">&gt;</span> PRIMITIVES SECURED<br>
+          <span class="prompt">&gt;</span> INFRASTRUCTURE DEPLOYED<br>
+          <span class="prompt">&gt;</span> YIELD: DETERMINISTIC
+        </div>
+      </div>
+    </div>
+
+    <!-- Silence Module -->
+    <div style="margin-top:24px;">
+      <div class="silence-module"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="circuit-trace-h" style="position:absolute; top:-1px; left:5%; width:90%;">
+    <div class="trace-runner" style="animation-duration:8s;"></div>
+  </div>
+  <div class="circuit-node" style="top:-4px; left:5%;"></div>
+  <div class="circuit-node" style="top:-4px; right:5%;"></div>
+
+  <div class="content-frame">
+    <div class="footer-grid">
+      <div>
+        <span class="mono" style="color:var(--text-sec); display:block; margin-bottom:16px;">Access Model (No Promises)</span>
+        <p style="color:var(--text-tert); font-size:0.875rem; line-height:1.65; max-width:420px; margin-bottom:20px;">
+          Circuittelligence provides access to sovereign AI infrastructure built on classical primitives. Outputs are constructed from verified fact atoms, constrained by integrity gates.
+        </p>
+        <span class="mono" style="font-size:0.65rem; color:var(--text-tert);">
+          <span class="status-dot"></span> Status: Operational
+        </span>
+      </div>
+      <div>
+        <span class="mono" style="color:var(--text-sec); display:block; margin-bottom:16px;">Disclaimers</span>
+        <ul class="disc-list">
+          <li>Outputs constructed from verified knowledge in LOCI</li>
+          <li>All operations constrained by KOSMOS</li>
+          <li>No warranties expressed or implied</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>&copy; 2026 Circuittelligence</span>
+      
+      <div style="display:flex; gap:24px; flex-wrap:wrap;">
+        <a href="https://buy.stripe.com/5kQdR99M4bZMcTk82n7g401" target="_blank" rel="noopener">One‑time Support</a>
+        <a href="https://buy.stripe.com/dRm3cvf6o2pc3iK96r7g400" target="_blank" rel="noopener">Monthly Support</a>
+        <a href="tel:+16197529899">Support +1 (619) 752-9899</a>
+        <span>Security: Level 4</span>
+        <span>Protocol: Sephorus</span>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- INTAKE MODAL --><!-- SCRIPTS -->
+<script>
+(function(){
+  var c=document.getElementById('noiseCanvas'),ctx=c.getContext('2d');
+  function resize(){c.width=window.innerWidth;c.height=window.innerHeight;render()}
+  function render(){var w=c.width,h=c.height,img=ctx.createImageData(w,h),d=new Uint32Array(img.data.buffer);for(var i=0;i<d.length;i++){if(Math.random()<0.04)d[i]=0xffffffff}ctx.putImageData(img,0,0)}
+  window.addEventListener('resize',resize);resize();
+  if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches)setInterval(render,4000);
+})();
+
+</script>
+
+</body>
+</html>

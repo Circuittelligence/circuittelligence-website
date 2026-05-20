@@ -1,182 +1,1367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuittelligence - Intelligence Made Human</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Circuittelligence — Ethical AI Systems Design & Integration</title>
+  <meta name="description" content="Circuittelligence designs constrained, auditable AI systems for enterprises: sovereign architecture, risk-aware integration, and governance-first deployment.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Circuittelligence — Ethical AI Systems Design & Integration">
+  <meta property="og:description" content="Circuittelligence designs constrained, auditable AI systems for enterprises: sovereign architecture, risk-aware integration, and governance-first deployment.">
+  <meta property="og:url" content="https://circuittelligence.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://circuittelligence.com/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Circuittelligence — Ethical AI Systems Design & Integration">
+  <meta name="twitter:description" content="Circuittelligence designs constrained, auditable AI systems for enterprises: sovereign architecture, risk-aware integration, and governance-first deployment.">
+  <meta name="twitter:image" content="https://circuittelligence.com/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Circuittelligence",
+    "url": "https://circuittelligence.com",
+    "description": "Circuittelligence designs constrained, auditable AI systems for enterprises: sovereign architecture, risk-aware integration, and governance-first deployment.",
+    "email": "info@circuittelligence.com"
+  ,
+  "telephone": "+1-619-752-9899"
+}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CIRCUITTELLIGENCE V2.4 — OPERATING DOCTRINE
+   Visual Signature: Circuit Traces + Industrial Grain + Kinetic Weight
+   ============================================================ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --surface-0: #050A18;
+  --surface-1: #0F172A;
+  --surface-2: #1E293B;
+  --border-subtle: #334155;
+  --text-pri: #F8FAFC;
+  --text-sec: #94A3B8;
+  --text-tert: #64748B;
+  --signal-info: #3B82F6;
+  --signal-warn: #FFAA00;
+  --signal-success: #10B981;
+  --signal-error: #EF4444;
+  --ease-standard: cubic-bezier(0.2, 0.0, 0.2, 1.0);
+  --ease-entrance: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --ease-exit: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--surface-0);
+  color: var(--text-pri);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+::selection { background: var(--signal-info); color: white; }
+
+/* ============================================================
+   NOISE TEXTURE — 4% monochromatic, overlay blend
+   This is a REQUIRED compositional element, not optional
+   ============================================================ */
+.noise-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
+/* ============================================================
+   CIRCUIT TRACES — The ownable visual signature
+   Animated dashed lines that pulse with electricity
+   These appear as structural elements, not decoration
+   ============================================================ */
+.circuit-trace {
+  position: absolute;
+  background: none;
+  pointer-events: none;
+}
+
+.circuit-trace-h {
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--signal-info) 0px,
+    var(--signal-info) 4px,
+    transparent 4px,
+    transparent 6px
+  );
+  opacity: 0.3;
+  filter: drop-shadow(0 0 3px rgba(59, 130, 246, 0.4));
+  animation: trace-pulse 3s ease-in-out infinite;
+}
+
+.circuit-trace-v {
+  width: 1px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--signal-info) 0px,
+    var(--signal-info) 4px,
+    transparent 4px,
+    transparent 6px
+  );
+  opacity: 0.3;
+  filter: drop-shadow(0 0 3px rgba(59, 130, 246, 0.4));
+  animation: trace-pulse 3s ease-in-out infinite;
+}
+
+/* Circuit Nodes — junction points where traces meet */
+.circuit-node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal-info);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.2);
+  animation: node-glow 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Amber nodes for human-attention points */
+.circuit-node-amber {
+  background: var(--signal-warn);
+  box-shadow: 0 0 8px rgba(255, 170, 0, 0.6), 0 0 20px rgba(255, 170, 0, 0.2);
+}
+
+@keyframes trace-pulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.45; }
+}
+
+@keyframes node-glow {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
+
+/* Trace Runner — a light that travels along a trace */
+@keyframes trace-runner-h {
+  0% { left: -5%; }
+  100% { left: 105%; }
+}
+
+@keyframes trace-runner-v {
+  0% { top: -5%; }
+  100% { top: 105%; }
+}
+
+.trace-runner {
+  position: absolute;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--signal-info), transparent);
+  animation: trace-runner-h 4s linear infinite;
+  pointer-events: none;
+}
+
+.trace-runner-v {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, transparent, var(--signal-info), transparent);
+  animation: trace-runner-v 5s linear infinite;
+}
+
+/* ============================================================
+   LAYOUT — Max 1280px content, 4px baseline
+   ============================================================ */
+.content-frame {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .content-frame { padding: 0 24px; }
+}
+
+@media (max-width: 480px) {
+  .content-frame { padding: 0 16px; }
+}
+
+/* ============================================================
+   TYPOGRAPHY — Variable weight, fluid clamp, kinetic
+   ============================================================ */
+.type-display {
+  font-size: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variation-settings: 'wght' 700;
+}
+
+.type-title-1 {
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.type-title-2 {
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.type-body { font-size: 1rem; line-height: 1.5; font-weight: 400; }
+.type-label { font-size: 0.875rem; line-height: 1.4; font-weight: 500; letter-spacing: 0.01em; }
+.type-caption { font-size: 0.75rem; line-height: 1.4; font-weight: 400; letter-spacing: 0.02em; }
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Kinetic Weight Hover — text shifts weight, not color */
+.kinetic-weight {
+  transition: font-variation-settings 0.2s var(--ease-standard);
+  font-variation-settings: 'wght' 400;
+  display: inline-block;
+}
+.kinetic-weight:hover {
+  font-variation-settings: 'wght' 600;
+}
+
+/* ============================================================
+   BENTO MODULES — The card system with circuit borders
+   ============================================================ */
+.bento-module {
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-standard), border-color 0.35s var(--ease-standard);
+}
+
+.bento-module:hover {
+  transform: scale(1.02);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+/* Circuit corner accent on modules */
+.bento-module::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 32px;
+  height: 32px;
+  border-top: 1px dashed var(--signal-info);
+  border-left: 1px dashed var(--signal-info);
+  border-top-left-radius: 12px;
+  opacity: 0.4;
+  pointer-events: none;
+  filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.3));
+}
+
+.bento-module::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 32px;
+  height: 32px;
+  border-bottom: 1px dashed var(--signal-info);
+  border-right: 1px dashed var(--signal-info);
+  border-bottom-right-radius: 12px;
+  opacity: 0.4;
+  pointer-events: none;
+  filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.3));
+}
+
+/* Amber-accented module variant */
+.bento-module-warn::before {
+  border-color: var(--signal-warn);
+  filter: drop-shadow(0 0 2px rgba(255, 170, 0, 0.3));
+}
+.bento-module-warn::after {
+  border-color: var(--signal-warn);
+  filter: drop-shadow(0 0 2px rgba(255, 170, 0, 0.3));
+}
+.bento-module-warn:hover {
+  border-color: rgba(255, 170, 0, 0.25);
+}
+
+/* ============================================================
+   BENTO GRID
+   ============================================================ */
+.bento-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.bento-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.bento-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.bento-span-2 { grid-column: span 2; }
+
+@media (max-width: 1024px) {
+  .bento-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .bento-span-2 { grid-column: span 2; }
+}
+
+@media (max-width: 640px) {
+  .bento-grid-3, .bento-grid-2 { grid-template-columns: 1fr; }
+  .bento-span-2 { grid-column: span 1; }
+  .bento-grid { gap: 16px; }
+}
+
+/* ============================================================
+   SILENCE MODULE — Empty space that speaks
+   Reserve unit, Void Navy, no content. A design primitive.
+   ============================================================ */
+.silence-module {
+  background: var(--surface-0);
+  border: 1px dashed var(--border-subtle);
+  border-radius: 12px;
+  min-height: 120px;
+  position: relative;
+  opacity: 0.5;
+}
+
+.silence-module::before {
+  content: '//SILENCE';
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--border-subtle);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   SOVEREIGN MARK — Logo with enforced isolation zone
+   ============================================================ */
+.sovereign-mark {
+  width: 44px;
+  height: 44px;
+  background: var(--signal-info);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--surface-0);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+  /* 150% clear space enforced by parent padding */
+  flex-shrink: 0;
+  position: relative;
+  z-index: 50; /* Sovereign layer — above all textures */
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 10, 24, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  padding: 0 48px;
+}
+
+@media (max-width: 768px) { .nav-bar { padding: 0 24px; } }
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links { display: flex; gap: 40px; }
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-tert);
+  text-decoration: none;
+  transition: font-variation-settings 0.2s var(--ease-standard), color 0.2s;
+  font-variation-settings: 'wght' 400;
+}
+.nav-links a:hover {
+  color: var(--text-pri);
+  font-variation-settings: 'wght' 600;
+}
+.nav-links a.active {
+  color: var(--signal-info);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.4);
+  padding-bottom: 2px;
+}
+
+.nav-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* 150% clear space around mark = 66px total, but we use padding */
+  padding: 12px 0;
+}
+
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.nav-logo-text .name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+}
+.nav-logo-text .version {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: var(--signal-info);
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+}
+
+/* ============================================================
+   HERO — with circuit trace structural elements
+   ============================================================ */
+.hero {
+  position: relative;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) { .hero { padding: 80px 0 48px; } }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 12px;
+  border-left: 2px solid var(--signal-warn);
+  margin-bottom: 32px;
+}
+
+.hero-headline {
+  max-width: 900px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-headline .muted {
+  color: var(--text-sec);
+  font-variation-settings: 'wght' 500;
+}
+
+.hero-sub {
+  font-size: 1.125rem;
+  color: var(--text-sec);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+  font-weight: 300;
+}
+
+.hero-sub strong {
+  color: var(--text-pri);
+  font-weight: 600;
+}
+
+/* Hero structural traces */
+.hero-trace-1 {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.hero-trace-2 {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  bottom: 10%;
+  width: 1px;
+}
+
+/* ============================================================
+   DEFINITION MODULE — The identity card
+   ============================================================ */
+.def-module {
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+}
+
+@media (max-width: 768px) {
+  .def-module { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
+}
+
+.def-divider {
+  width: 1px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--signal-info) 0px,
+    var(--signal-info) 4px,
+    transparent 4px,
+    transparent 6px
+  );
+  opacity: 0.3;
+  filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.3));
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 33.33%;
+}
+
+@media (max-width: 768px) { .def-divider { display: none; } }
+
+/* ============================================================
+   PILLARS SECTION
+   ============================================================ */
+.section-break {
+  padding: 96px 0;
+  border-top: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.pillar-number {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.pillar-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--signal-info);
+  font-size: 1.2rem;
+  transition: transform 0.35s var(--ease-standard);
+}
+
+.bento-module:hover .pillar-icon { transform: scale(1.1); }
+
+.pillar-label {
+  color: var(--signal-info);
+  margin-bottom: 8px;
+}
+
+.pillar-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.pillar-desc {
+  font-size: 0.875rem;
+  color: var(--text-tert);
+  line-height: 1.65;
+}
+
+/* ============================================================
+   ENGAGEMENT TIMELINE — Circuit-trace timeline
+   ============================================================ */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+/* The timeline IS a circuit trace */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--signal-info) 0px,
+    var(--signal-info) 4px,
+    transparent 4px,
+    transparent 6px
+  );
+  opacity: 0.35;
+  filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.3));
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+/* Timeline nodes */
+.timeline-node {
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--surface-0);
+  border: 1.5px solid var(--border-subtle);
+  transition: all 0.3s var(--ease-standard);
+  z-index: 2;
+}
+
+.timeline-item:hover .timeline-node {
+  background: var(--signal-info);
+  border-color: var(--signal-info);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.timeline-title {
+  font-weight: 500;
+  margin-bottom: 4px;
+  transition: color 0.2s;
+}
+
+.timeline-item:hover .timeline-title { color: var(--signal-info); }
+
+.timeline-desc {
+  font-size: 0.875rem;
+  color: var(--text-tert);
+}
+
+/* ============================================================
+   CTA MODULE
+   ============================================================ */
+.cta-module {
+  text-align: center;
+  padding: 56px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--signal-info);
+  color: var(--surface-0);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-standard), box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.25);
+}
+
+.cta-button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.35);
+}
+
+.cta-button:focus-visible {
+  outline: 3px solid var(--signal-info);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  padding: 64px 0;
+  border-top: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; } }
+
+.footer-bar {
+  padding-top: 32px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bar span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-tert);
+  text-transform: uppercase;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal-success);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+  margin-right: 6px;
+}
+
+/* ============================================================
+   ENTRY ANIMATIONS — Stagger from top-left per choreography spec
+   ============================================================ */
+@keyframes module-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-enter {
+  opacity: 0;
+  animation: module-enter 0.5s var(--ease-entrance) forwards;
+}
+
+.anim-d1 { animation-delay: 0.05s; }
+.anim-d2 { animation-delay: 0.1s; }
+.anim-d3 { animation-delay: 0.15s; }
+.anim-d4 { animation-delay: 0.2s; }
+.anim-d5 { animation-delay: 0.25s; }
+.anim-d6 { animation-delay: 0.3s; }
+.anim-d7 { animation-delay: 0.35s; }
+.anim-d8 { animation-delay: 0.4s; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .anim-enter { opacity: 1; }
+  .circuit-trace-h, .circuit-trace-v, .circuit-node, .trace-runner { display: none; }
+}
+
+/* Disclaimer list */
+.disc-list { list-style: none; padding: 0; }
+.disc-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  color: var(--text-tert);
+}
+.disc-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--signal-info);
+}
+/* ============================================================
+   INTAKE MODAL — Branded form overlay
+   ============================================================ */
+.intake-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s var(--ease-standard), visibility 0.35s;
+}
+
+.intake-modal.modal-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 10, 24, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.modal-container {
+  position: relative;
+  width: 90%;
+  max-width: 680px;
+  max-height: 90vh;
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  overflow: hidden;
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s var(--ease-entrance);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-open .modal-container {
+  transform: translateY(0) scale(1);
+}
+
+/* Circuit corner accents on modal */
+.modal-container::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 48px;
+  height: 48px;
+  border-top: 1px dashed var(--signal-info);
+  border-left: 1px dashed var(--signal-info);
+  border-top-left-radius: 16px;
+  opacity: 0.5;
+  pointer-events: none;
+  filter: drop-shadow(0 0 3px rgba(59, 130, 246, 0.4));
+  z-index: 2;
+}
+
+.modal-container::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 48px;
+  height: 48px;
+  border-bottom: 1px dashed var(--signal-info);
+  border-right: 1px dashed var(--signal-info);
+  border-bottom-right-radius: 16px;
+  opacity: 0.5;
+  pointer-events: none;
+  filter: drop-shadow(0 0 3px rgba(59, 130, 246, 0.4));
+  z-index: 2;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Circuit trace under header */
+.modal-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 32px;
+  right: 32px;
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--signal-info) 0px,
+    var(--signal-info) 4px,
+    transparent 4px,
+    transparent 6px
+  );
+  opacity: 0.3;
+  filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.3));
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  color: var(--text-sec);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  border-color: var(--signal-error);
+  color: var(--signal-error);
+}
+
+.modal-close:focus-visible {
+  outline: 3px solid var(--signal-info);
+  outline-offset: 2px;
+}
+
+.modal-body {
+  flex: 1;
+  overflow: hidden;
+}
+
+.modal-body iframe {
+  width: 100%;
+  height: 75vh;
+  max-height: 600px;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .modal-container {
+    width: 95%;
+    max-height: 95vh;
+  }
+  .modal-header { padding: 16px 20px; }
+  .modal-body iframe { max-height: 70vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intake-modal, .modal-container { transition-duration: 0.01ms !important; }
+}
+</style>
 </head>
 <body>
-    <!-- A. Entry / Hero Section -->
-    <section id="hero" class="section">
-        <div class="hero-content">
-            <div class="logo-mark" id="logoMark">
-                <h1>Circuittelligence</h1>
-            </div>
-            <div class="hero-tagline" id="heroTagline">
-                <p>Intelligence Made Human.</p>
-            </div>
-        </div>
-        <div class="pulse-overlay" id="pulseOverlay"></div>
-    </section>
 
-    <!-- B. About / Mission Section -->
-    <section id="about" class="section">
-        <div class="content-container">
-            <div class="about-content">
-                <p>Circuittelligence builds systems that think with you, not for you.</p>
-                <p>Each circuit honors human intent.</p>
-                <p>Proof lives in clarity.</p>
-            </div>
-        </div>
-    </section>
+<!-- NOISE TEXTURE -->
+<canvas id="noiseCanvas" class="noise-layer"></canvas>
 
-    <!-- C. Platform / Products Section -->
-    <section id="platform" class="section">
-        <div class="content-container">
-            <div class="platform-grid">
-                <div class="platform-node" data-product="argonaut">
-                    <div class="node-light"></div>
-                    <h3>Argonaut</h3>
-                </div>
-                <div class="platform-node" data-product="prism">
-                    <div class="node-light"></div>
-                    <h3>Prism</h3>
-                </div>
-                <div class="platform-node" data-product="olympus">
-                    <div class="node-light"></div>
-                    <h3>Olympus</h3>
-                </div>
-                <div class="platform-node" data-product="brandquest">
-                    <div class="node-light"></div>
-                    <h3>BrandQuest</h3>
-                </div>
-                <div class="platform-node" data-product="proposal">
-                    <div class="node-light"></div>
-                    <h3>Proposal Builder</h3>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Product Detail Overlays -->
-        <div class="product-overlay" id="argonaut-overlay">
-            <div class="overlay-content">
-                <h4>Argonaut</h4>
-                <p>AI-powered navigation through complex business decisions.</p>
-                <button class="learn-more-btn">Learn More</button>
-            </div>
-        </div>
-        
-        <div class="product-overlay" id="prism-overlay">
-            <div class="overlay-content">
-                <h4>Prism</h4>
-                <p>Multi-dimensional analysis for strategic clarity.</p>
-                <button class="learn-more-btn">Learn More</button>
-            </div>
-        </div>
-        
-        <div class="product-overlay" id="olympus-overlay">
-            <div class="overlay-content">
-                <h4>Olympus</h4>
-                <p>Peak performance optimization for operational excellence.</p>
-                <button class="learn-more-btn">Learn More</button>
-            </div>
-        </div>
-        
-        <div class="product-overlay" id="brandquest-overlay">
-            <div class="overlay-content">
-                <h4>BrandQuest</h4>
-                <p>Intelligent brand strategy and narrative development.</p>
-                <button class="learn-more-btn">Learn More</button>
-            </div>
-        </div>
-        
-        <div class="product-overlay" id="proposal-overlay">
-            <div class="overlay-content">
-                <h4>Proposal Builder</h4>
-                <p>Automated proposal generation with human insight.</p>
-                <button class="learn-more-btn">Learn More</button>
-            </div>
-        </div>
-    </section>
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <div class="nav-logo-group">
+      <div class="sovereign-mark">C.</div>
+      <div class="nav-logo-text">
+        <span class="name">Circuittelligence</span>
+        <span class="version">Sys.V2.5 // Online</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="kinetic-weight">Product</a>
+      <a href="#" class="kinetic-weight">Fund</a>
+      <a href="#" class="kinetic-weight active">Doctrine</a>
+      <a href="#terms" class="kinetic-weight">Terms</a>
+      <a href="#privacy" class="kinetic-weight">Privacy</a>
+    </div>
+  </div>
+</nav>
 
-    <!-- D. Measured Experiences Section -->
-    <section id="experiences" class="section">
-        <div class="content-container">
-            <div class="experiences-grid">
-                <div class="experience-item">
-                    <div class="experience-silhouette baker"></div>
-                    <div class="experience-metric">+18% clarity gain</div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-silhouette designer"></div>
-                    <div class="experience-metric">4.2h saved</div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-silhouette teacher"></div>
-                    <div class="experience-metric">+32% efficiency</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <!-- Structural circuit traces -->
+  <div class="hero-trace-1 circuit-trace-h" style="width:100%;">
+    <div class="trace-runner" style="animation-delay: 0.5s;"></div>
+  </div>
+  <div class="hero-trace-2 circuit-trace-v" style="height:60%;">
+    <div class="trace-runner trace-runner-v" style="animation-delay: 2s;"></div>
+  </div>
+  <div class="circuit-node" style="top:60%; right:15%;"></div>
 
-    <!-- E. Insights / Journal Section -->
-    <section id="insights" class="section">
-        <div class="content-container">
-            <div class="insights-header">
-                <h2>Insights</h2>
-            </div>
-            <div class="insights-grid">
-                <article class="insight-tile">
-                    <div class="tile-border"></div>
-                    <h3>Human-First AI Implementation</h3>
-                    <p>Exploring the balance between automation and human agency in modern business systems.</p>
-                    <time>2025-09-15</time>
-                </article>
-                <article class="insight-tile">
-                    <div class="tile-border"></div>
-                    <h3>Measuring ROI in AI Integration</h3>
-                    <p>Quantitative approaches to evaluating the impact of intelligent systems on business outcomes.</p>
-                    <time>2025-09-08</time>
-                </article>
-                <article class="insight-tile">
-                    <div class="tile-border"></div>
-                    <h3>The Circuit Paradigm</h3>
-                    <p>Understanding how interconnected systems create emergent intelligence while preserving human control.</p>
-                    <time>2025-09-01</time>
-                </article>
-            </div>
-        </div>
-    </section>
+  <div class="content-frame">
+    <div class="hero-badge anim-enter anim-d1">
+      <span class="mono" style="color: var(--signal-warn);">Operating Doctrine v1.0</span>
+    </div>
 
-    <!-- F. Contact / Join Section -->
-    <section id="contact" class="section">
-        <div class="content-container">
-            <div class="contact-content">
-                <h2>Start the circuit.</h2>
-                <div class="contact-buttons">
-                    <button class="contact-btn" data-action="partner">Partner</button>
-                    <button class="contact-btn" data-action="careers">Careers</button>
-                    <button class="contact-btn" data-action="press">Press</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <h1 class="type-display hero-headline anim-enter anim-d2">
+      Ethical AI Systems<br>
+      <span class="muted">Design & Integration</span>
+    </h1>
 
-    <!-- G. Footer / Signature -->
-    <footer id="footer" class="section">
-        <div class="content-container">
-            <div class="footer-content">
-                <p>Powered by Circuittelligence.</p>
-            </div>
-        </div>
-    </footer>
+    <p class="hero-sub anim-enter anim-d3">
+      We design <strong>constrained, auditable AI systems</strong> for organizations that require determinism, human governance, and trust-first integration.
+    </p>
+<p>Early supporters get access to build artifacts, release notes, and execution proofs — <a href="fund.html">support the AEP build here</a>.</p>
 
-    <script src="script.js"></script>
+
+    <!-- Definition Module -->
+    <div class="bento-module anim-enter anim-d4" style="max-width: 960px;">
+      <div class="def-divider"></div>
+      <div class="def-module">
+        <div>
+          <span class="mono" style="color: var(--text-tert); display: block; margin-bottom: 12px;">Core Identity</span>
+          <h2 class="type-title-2">What We Are</h2>
+        </div>
+        <div>
+          <p class="type-body" style="color: var(--text-sec); margin-bottom: 16px;">
+            Circuittelligence is an <strong style="color: var(--text-pri);">AI systems integration</strong> firm. We do not build black boxes. We engineer <strong style="color: var(--text-pri);">constrained AI architecture</strong> that bridges the gap between raw model capability and operational business requirements.
+          </p>
+          <p class="type-body" style="color: var(--text-sec);">
+            We specialize in sovereign data environments, ensuring that intelligence compounds within your organization rather than leaking to external vendors. Our work is operationalized through an internal constrained execution protocol (AEP), which informs how we design and govern AI systems in production.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PILLARS
+     ============================================================ -->
+<section class="section-break">
+  <!-- Horizontal trace at section boundary -->
+  <div class="circuit-trace-h" style="position: absolute; top: -1px; left: 10%; width: 80%; height: 1px;">
+    <div class="trace-runner" style="animation-delay: 1s; animation-duration: 6s;"></div>
+  </div>
+  <div class="circuit-node" style="top: -4px; left: 10%;"></div>
+  <div class="circuit-node circuit-node-amber" style="top: -4px; right: 10%;"></div>
+
+  <div class="content-frame">
+    <div class="section-header anim-enter anim-d1">
+      <div>
+        <span class="mono" style="color: var(--signal-warn); display: block; margin-bottom: 12px;">Ethical Framework</span>
+        <h2 class="type-title-1">Three Pillars of Governance</h2>
+      </div>
+    </div>
+
+    <div class="bento-grid bento-grid-3">
+      <!-- Pillar 01 -->
+      <div class="bento-module anim-enter anim-d2" style="padding: 32px;">
+        <div class="pillar-number">01</div>
+        <div class="pillar-icon">◈</div>
+        <div class="mono pillar-label">Sovereignty</div>
+        <h3 class="pillar-title">Client-Owned Intelligence</h3>
+        <p class="pillar-desc">Data vectors, knowledge graphs, and memory schemas belong to the client. We build systems where value compounds internally.</p>
+      </div>
+
+      <!-- Pillar 02 -->
+      <div class="bento-module anim-enter anim-d3" style="padding: 32px;">
+        <div class="pillar-number">02</div>
+        <div class="pillar-icon">⬡</div>
+        <div class="mono pillar-label">Determinism</div>
+        <h3 class="pillar-title">Constrained Logic</h3>
+        <p class="pillar-desc">We prioritize auditable AI systems. Constraint layers ensure AI outputs are verifiable, repeatable, and safe.</p>
+      </div>
+
+      <!-- Pillar 03 -->
+      <div class="bento-module-warn bento-module anim-enter anim-d4" style="padding: 32px;">
+        <div class="pillar-number">03</div>
+        <div class="pillar-icon" style="color: var(--signal-warn);">◉</div>
+        <div class="mono" style="color: var(--signal-warn); margin-bottom: 8px;">Transparency</div>
+        <h3 class="pillar-title">Human-Governed AI</h3>
+        <p class="pillar-desc">The methodology is protected, but outputs are transparent. Our systems enable full inspection of decision logic at every node.</p>
+      </div>
+
+      <!-- Silence Module -->
+      <div class="silence-module anim-enter anim-d5"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ENGAGEMENT MODEL
+     ============================================================ -->
+<section class="section-break" style="background: rgba(15, 23, 42, 0.3);">
+  <div class="circuit-trace-v" style="position: absolute; top: 0; left: 25%; height: 100%;">
+    <div class="trace-runner trace-runner-v" style="animation-delay: 0.8s; animation-duration: 7s;"></div>
+  </div>
+
+  <div class="content-frame">
+    <div class="bento-grid bento-grid-2">
+      <!-- Timeline -->
+      <div class="anim-enter anim-d1">
+        <span class="mono" style="color: var(--signal-info); display: block; margin-bottom: 16px;">Engagement Model</span>
+        <h2 class="type-title-1" style="margin-bottom: 32px;">How We Work</h2>
+        <p class="type-body" style="color: var(--text-sec); margin-bottom: 40px;">
+          Our responsible AI consulting practice focuses on enterprise AI design and deployment. We move beyond simple prompting to full stack infrastructure integration.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <h4 class="timeline-title">01. Discovery</h4>
+            <p class="timeline-desc">Archetypal analysis of business needs and risk surfaces.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <h4 class="timeline-title">02. Architecture</h4>
+            <p class="timeline-desc">Designing VPC and Sovereign SaaS environments.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <h4 class="timeline-title">03. Integration</h4>
+            <p class="timeline-desc">Implementing AI risk management protocols and memory systems.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bento-module anim-enter anim-d3">
+        <div class="cta-module">
+          <div class="pillar-icon" style="margin-bottom: 32px; width: 56px; height: 56px; font-size: 1.4rem;">⬢</div>
+          <h3 class="type-title-2" style="margin-bottom: 16px;">Ready to Architect?</h3>
+          <p class="type-body" style="color: var(--text-tert); margin-bottom: 40px; max-width: 320px;">
+            For organizations evaluating AI systems integration, we offer direct discovery sessions.
+          </p>
+          <button onclick="openIntake()" class="cta-button">
+            Schedule Discovery →
+          </button>
+          <span class="mono" style="color: var(--text-tert); display: block; margin-top: 24px;">info@circuittelligence.com · <a href="tel:+16197529899" style="color: inherit; text-decoration: none;">+1-619-752-9899</a></span>
+          <p class="type-caption" style="color: var(--signal-warn); margin-top: 16px;"><a href="/fund" style="color: inherit; text-decoration: underline;">Early supporter access to tools and research artifacts will open soon.</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TERMS OF SERVICE
+     ============================================================ -->
+<section id="terms" class="section-break">
+  <div class="content-frame">
+    <span class="mono" style="color: var(--text-sec); display: block; margin-bottom: 16px;">Legal</span>
+    <h2 class="type-title-1" style="margin-bottom: 32px;">Terms of Service</h2>
+    <div style="max-width: 720px; color: var(--text-sec); font-size: 0.875rem; line-height: 1.7;">
+      <p style="margin-bottom: 16px;"><strong style="color: var(--text-pri);">Effective Date:</strong> February 11, 2026</p>
+
+      <p style="margin-bottom: 16px;">These Terms of Service ("Terms") govern your access to and use of services provided by Circuittelligence Operations ("Circuittelligence," "we," "us," or "our"), including AI systems integration consulting, infrastructure deployment, and related deliverables.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">1. Services</strong></p>
+      <p style="margin-bottom: 16px;">Circuittelligence provides AI systems design, integration consulting, and infrastructure architecture services. All engagements are governed by individual Statements of Work ("SOW") that define scope, deliverables, timelines, and fees. Services are offered as access to a system and methodology, not as a guarantee of specific business outcomes.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">2. Payment</strong></p>
+      <p style="margin-bottom: 16px;">Fees are specified in each SOW. Payment is processed through Stripe. All fees are non-refundable unless otherwise stated in the applicable SOW. We reserve the right to suspend services for overdue accounts after 15 days written notice.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">3. Intellectual Property</strong></p>
+      <p style="margin-bottom: 16px;">Client data, knowledge graphs, vectors, and outputs generated from client data remain the exclusive property of the client. Circuittelligence retains ownership of its proprietary methodologies, constraint architectures, tooling, and system frameworks. Neither party may use the other's intellectual property outside the scope of the engagement without written consent.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">4. Data Sovereignty</strong></p>
+      <p style="margin-bottom: 16px;">For self-hosted deployments, client data remains within the client's infrastructure at all times. For managed deployments, data handling is governed by the Data Processing Addendum attached to the SOW. We do not sell, share, or use client data for training AI models.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">5. Limitation of Liability</strong></p>
+      <p style="margin-bottom: 16px;">Circuittelligence's total liability for any claim arising from services shall not exceed the fees paid under the applicable SOW in the twelve (12) months preceding the claim. We are not liable for indirect, incidental, consequential, or punitive damages. Services involving AI systems carry inherent limitations; we do not warrant that AI outputs will be error-free.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">6. Termination</strong></p>
+      <p style="margin-bottom: 16px;">Either party may terminate an engagement with 30 days written notice. Upon termination, all client data and deliverables completed to date are transferred to the client. Circuittelligence retains its proprietary systems and methodologies.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">7. Governing Law</strong></p>
+      <p style="margin-bottom: 16px;">These Terms are governed by the laws of the State of California. Disputes shall be resolved through binding arbitration in San Diego County, California.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">8. Contact</strong></p>
+      <p>For questions regarding these Terms: <a href="mailto:info@circuittelligence.com" style="color: var(--signal-info); text-decoration: none;">info@circuittelligence.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRIVACY POLICY
+     ============================================================ -->
+<section id="privacy" class="section-break">
+  <div class="content-frame">
+    <span class="mono" style="color: var(--text-sec); display: block; margin-bottom: 16px;">Legal</span>
+    <h2 class="type-title-1" style="margin-bottom: 32px;">Privacy Policy</h2>
+    <div style="max-width: 720px; color: var(--text-sec); font-size: 0.875rem; line-height: 1.7;">
+      <p style="margin-bottom: 16px;"><strong style="color: var(--text-pri);">Effective Date:</strong> February 11, 2026</p>
+
+      <p style="margin-bottom: 16px;">Circuittelligence Operations ("Circuittelligence," "we," "us," or "our") is committed to protecting the privacy of individuals who visit our website and clients who use our services. This Privacy Policy describes how we collect, use, and safeguard information.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">1. Information We Collect</strong></p>
+      <p style="margin-bottom: 16px;"><em>Contact Information:</em> Name, email address, and company name when you contact us or engage our services. <em>Usage Data:</em> Standard web analytics (page views, referral source, browser type) collected via privacy-respecting analytics. We do not use third-party tracking pixels or sell data to advertisers. <em>Client Engagement Data:</em> Information provided during service engagements, governed by individual SOWs and Data Processing Addendums.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">2. How We Use Information</strong></p>
+      <p style="margin-bottom: 16px;">To respond to inquiries and provide requested services. To process payments through Stripe (Stripe's privacy policy governs payment data). To improve our website and service delivery. We do not use personal information to train AI models.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">3. Data Sharing</strong></p>
+      <p style="margin-bottom: 16px;">We do not sell personal information. We share data only with: payment processors (Stripe) to complete transactions, cloud infrastructure providers as required for managed service delivery (governed by Data Processing Addendums), and legal authorities when required by law.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">4. Data Retention</strong></p>
+      <p style="margin-bottom: 16px;">Contact information is retained for the duration of the business relationship plus 24 months. Client engagement data is retained per the applicable SOW. You may request deletion of your personal data at any time by contacting us.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">5. Security</strong></p>
+      <p style="margin-bottom: 16px;">We implement industry-standard security measures including encryption in transit and at rest, access controls, and regular security reviews. For self-hosted client deployments, security is managed within the client's own infrastructure.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">6. Your Rights</strong></p>
+      <p style="margin-bottom: 16px;">Depending on your jurisdiction, you may have the right to: access the personal data we hold about you, request correction or deletion of your data, opt out of marketing communications, and request data portability. California residents may exercise rights under the CCPA by contacting us.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">7. Cookies</strong></p>
+      <p style="margin-bottom: 16px;">This website uses only essential cookies required for basic functionality. We do not use advertising or third-party tracking cookies.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">8. Changes</strong></p>
+      <p style="margin-bottom: 16px;">We may update this Privacy Policy periodically. Changes will be posted on this page with an updated effective date.</p>
+
+      <p style="margin-bottom: 8px;"><strong style="color: var(--text-pri);">9. Contact</strong></p>
+      <p>For privacy inquiries: <a href="mailto:info@circuittelligence.com" style="color: var(--signal-info); text-decoration: none;">info@circuittelligence.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="circuit-trace-h" style="position: absolute; top: -1px; left: 5%; width: 90%;">
+    <div class="trace-runner" style="animation-duration: 8s;"></div>
+  </div>
+  <div class="circuit-node" style="top: -4px; left: 5%;"></div>
+  <div class="circuit-node" style="top: -4px; right: 5%;"></div>
+
+  <div class="content-frame">
+    <div class="footer-grid">
+      <div>
+        <span class="mono" style="color: var(--text-sec); display: block; margin-bottom: 16px;">Access Model (No Promises)</span>
+        <p style="color: var(--text-tert); font-size: 0.875rem; line-height: 1.65; max-width: 420px; margin-bottom: 20px;">
+          Circuittelligence is offered as access to a system, not as a promise of results. We provide the infrastructure; the outcome depends on the operator.
+        </p>
+        <span class="mono" style="font-size: 0.65rem; color: var(--text-tert);">
+          <span class="status-dot"></span> Status: Operational
+        </span>
+      </div>
+      <div>
+        <span class="mono" style="color: var(--text-sec); display: block; margin-bottom: 16px;">Disclaimers</span>
+        <ul class="disc-list">
+          <li>Outputs are generated from provided data only</li>
+          <li>No warranties are expressed or implied</li>
+          <li>Sovereignty guarantees apply to self-hosted instances</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>&copy; 2026 Circuittelligence</span>
+      <div style="display: flex; gap: 24px;">
+        <a href="#terms" style="color: var(--text-tert); text-decoration: none; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;">Terms</a>
+        <a href="#privacy" style="color: var(--text-tert); text-decoration: none; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;">Privacy</a>
+        <span>Security: Level 4</span>
+        <span>Protocol: Sephorus</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     NOISE GENERATION — Canvas implementation per spec
+     ============================================================ -->
+<script>
+(function() {
+  const c = document.getElementById('noiseCanvas');
+  const ctx = c.getContext('2d');
+  function resize() {
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+    render();
+  }
+  function render() {
+    const w = c.width, h = c.height;
+    const img = ctx.createImageData(w, h);
+    const d = new Uint32Array(img.data.buffer);
+    for (let i = 0; i < d.length; i++) {
+      if (Math.random() < 0.04) d[i] = 0xffffffff;
+    }
+    ctx.putImageData(img, 0, 0);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // Respect reduced motion
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Subtle re-render every 4s for "living" grain
+    setInterval(render, 4000);
+  }
+})();
+</script>
+
+<!-- ============================================================
+     INTAKE MODAL
+     ============================================================ -->
+<div id="intake-modal" class="intake-modal">
+  <div class="modal-backdrop" onclick="document.getElementById('intake-modal').classList.remove('modal-open')"></div>
+  <div class="modal-container">
+    <div class="modal-header">
+      <div>
+        <span class="mono" style="color: var(--signal-info); display: block; margin-bottom: 4px;">Discovery Intake</span>
+        <span class="type-label" style="color: var(--text-pri);">Begin your architecture assessment</span>
+      </div>
+      <button class="modal-close" onclick="document.getElementById('intake-modal').classList.remove('modal-open')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjlO37wVlfu32AWwE5s15be_I8e3rMy5X_Bk3FjxRKjtWsPQ/viewform?embedded=true" loading="lazy" title="Circuittelligence Discovery Intake Form">Loading…</iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') document.getElementById('intake-modal').classList.remove('modal-open');
+});
+
+// Modal on desktop, direct link on mobile
+function openIntake() {
+  var formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScjlO37wVlfu32AWwE5s15be_I8e3rMy5X_Bk3FjxRKjtWsPQ/viewform?usp=sharing&ouid=109456571014748648595';
+  if (window.innerWidth < 768) {
+    window.open(formUrl, '_blank', 'noopener');
+  } else {
+    document.getElementById('intake-modal').classList.add('modal-open');
+  }
+}
+</script>
+
 </body>
 </html>
